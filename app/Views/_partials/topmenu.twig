@@ -1,0 +1,81 @@
+            <nav>
+
+                <ul class="menu">
+
+                    <li class="active"><a href="index.php">Home</a></li>
+                    <li><button class="menu-element" data-action="show-quote-popup" data-quote-key="life-insurance">Get a quote</button></li>
+                    <li><a href="blog.php">Blog</a></li>
+					
+
+					
+                
+                    <li>
+
+                        <a href="agents.php">Pages</a>
+                        <i class="fa fa-caret-down"></i>
+
+                        <ul class="submenu animated speed fadeInDown">
+
+                            <li><a href="agents.php">Agents</a></li>
+
+                            <li>
+
+                                <a href="get-a-travel-insurance-quote.php"><i class="fa fa-caret-left"></i> Quote forms</a>
+                                <ul class="submenu animated speed fadeInRight">
+
+                                    <li><a href="get-a-life-insurance-quote.php">Life insurance Quote</a></li>
+                                    <li><a href="get-a-car-insurance-quote.php">Car insurance Quote</a></li>
+                                    <li><a href="get-a-house-insurance-quote.php">House insurance Quote</a></li>
+                                    <li><a href="get-a-travel-insurance-quote.php">Travel insurance Quote</a></li>
+                                    <li><a href="get-a-travel-insurance-quote.php">Health insurance Quote</a></li>
+                                    <li><a href="get-a-travel-insurance-quote.php">Pet insurance Quote</a></li>
+                                    <li><a href="get-a-travel-insurance-quote.php">Funeral insurance Quote</a></li>
+                                </ul>
+
+                            </li>
+
+                            <li><a href="claims.php">Quotes</a></li>
+                            <li><a href="contact.php">Contact page</a></li>
+
+                            <li>
+
+                                <a href="travel-insurance.php"><i class="fa fa-caret-left"></i> Insurances promo</a>
+                                <ul class="submenu animated speed fadeInRight">
+
+                                    <li><a href="life-insurance.php">Life insurance</a></li>
+                                    <li><a href="car-insurance.php">Car insurance</a></li>
+                                    <li><a href="house-insurance.php">House insurance</a></li>
+                                    <li><a href="travel-insurance.php">Travel insurance</a></li>
+                                    <li><a href="travel-insurance.php">Health insurance Quote</a></li>
+                                    <li><a href="travel-insurance.php">Pet insurance Quote</a></li>
+                                    <li><a href="travel-insurance.php">Funeral insurance Quote</a></li>
+
+                                </ul>
+
+                            </li>
+
+                            <li><a href="404.php">404 page</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li><button class="menu-element" data-action="show-contact-popup">Contact</button></li>
+			{% if session.user %}
+			 <li><a href="{{ urlFor('profile') }}">My Profile</a></li>
+                         <li><a href="{{ urlFor('logout') }}">Logout</a></li>
+{% else %}
+{% if flash.hideLogin %}
+{% else %}
+                        <li><a href="{{ urlFor('login') }}">Login</a></li>
+{% endif %}
+{% if flash.hideRegister %}
+{% else %}
+                         <li><a href="{{ urlFor('register') }}">Register</a></li>
+{% endif %}
+{% endif %}
+                </ul>
+
+                <div class="menu-responsive"><i class="fa fa-bars"></i></div>
+
+            </nav>

@@ -1,0 +1,31 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Hello there</h1>
+                <p>You have successfully setup an instance of SlimRedTwig!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>User System</h1>
+                    <p>This basic app includes a user registration, login/logout, and username recovery/password reset system (though you'll need to setup outgoing emails). Give it a try by using the buttons in the navbar.</p>
+                    <p>The passwords are stored using a salted hash, and the salt is stored as well. During login, the user is found in the database, the salt is retrieved, and the entered password is then hashed and compared.</p>
+                    <p>Registration includes all the checks necessary to get a successful registration. This includes the form entry, as well as checking for availability of the selected username.</p>
+                    <p>To set a location as requiring login, just call <code>$this->verifyLogin()</code> from the route handler in your controller. This will check for the <code>$_SESSION['user']</code> and redirect to the login page if not found. It also remembers what page the user was attempting to access so they are redirected after a successful login.</p>
+                    <h1>Tests</h1>
+                    <p>Testing is also built-in with <a href="http://phpunit.de/">PHPUnit</a> tests already setup. Take a look in the <code>Tests</code> directory for an example.</p>
+                </div>
+                <div class="col-md-6">
+                    <h1>Useful Notes</h1>
+                    <h3>Models</h3>
+                    <p>The models are for interaction with <a href="http://redbeanphp.com">RedbeanPHP</a> 'beans'. The User model is provided as an example of one way to do this.</p>
+                    <h3>Views</h3>
+                    <p>Views are done with <a href="http://twig.sensiolabs.org/">Twig</a> templates. There is a base template, <code>layout.twig</code> that provides the main layout for all pages. It also provides a few Twig 'blocks' for inserting content from page layouts that extend the main layout.</p>
+                    <h3>Controllers</h3>
+                    <p>The controllers inherit from a <code>BaseController</code> class that provides a few things. Most importantly, it requires the implementation of an <code>initRoute()</code> method that is called by the constructor.</p>
+                    <p>This is where you define the routes that this controller handles, and map them to the methods that will respond to those routes.</p>
+                </div>
+            </div>
+        </div>
+{% endblock %}

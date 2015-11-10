@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <listeners>
+        <listener class="RedBeanListener" file="./Tests/RedBeanListener.php">
+        </listener>
+    </listeners>
+    <testsuites>
+        <testsuite name="Model Test Suite">
+            <directory>./Tests/Models/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
