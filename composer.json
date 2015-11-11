@@ -1,0 +1,5 @@
+{
+  "require": {
+    "yusukezzz/slim-debugbar": "1.*"
+  }
+}

@@ -5,7 +5,6 @@ require_once '../vendor/RedBean/rb.php';
 use Slim\Slim;
 use Slim\Views;
 use Slim\Middleware\CsrfGuard;
-
 // Register autoloaders
 Slim::registerAutoloader();
 require_once '../app/autoloader.php';
@@ -27,6 +26,7 @@ $app = new Slim(array(
     'cookies.secret_key' => 'InsertSecretKeyHere'
 ));
 $app->add(new CsrfGuard());
+
 
 // Setup the Twig view within the app.
 $view = $app->view();

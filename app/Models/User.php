@@ -129,8 +129,7 @@ class User extends \RedBean_SimpleModel
     // $fixes contains auto-keys with string values and may be empty
     public function updateProfile($req)
     {
-
-	//$this->bean=null;
+        
 		
 		$state=$req->post('state');
 		$postcode = $req->post('postcode');
@@ -156,9 +155,8 @@ class User extends \RedBean_SimpleModel
         {
             $fixes[] = "All fields are required.";
         }
-		 //$this= $_SESSION['user'];
+		// stop recursion clear sub bean
 		 $this->bean['bean']=null;
-
 
 
 	
